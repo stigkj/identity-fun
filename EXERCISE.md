@@ -93,7 +93,6 @@ In order to follow this tutorial, you need a computer with a Bash shell and cUrl
 2. You will be prompted to create an application if you haven't done so before
 3. [Create credentials](https://console.developers.google.com/apis/credentials/oauthclient)
 4. Select Web Application. Enter the following values:
-   * Authenticated origins: `https://my.example.com` (for example)
    * Authorized redirect URI: `https://my.example.com/oauth2callback` (for example)
    * Google will prompt you to add `example.com` as an authorized domain.
 5. Google will provide you with a *`client_id`* and *`client_secret`*. Copy these to a text file as you will need them both
@@ -127,7 +126,7 @@ To understand where the URLs and scopes come from, you can see the [Discovery do
 
 ### ID-porten
 
-1. Request a test client_id and client_secret from Difi for your required `redirect_uri`, or ask the workshop instructor for a `client_id` and `client_secret`. This example uses `http://localhost:8080/id/idporten/oauth2callback` as the `redirect_uri`. If you have an organization certificate that's registered with Difi, you can [issue clients](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_api_admin.html) yourself.
+  1. Request a test client_id and client_secret from Difi for your required `redirect_uri`, or ask the workshop instructor for a `client_id` and `client_secret`. This example uses `http://localhost:8080/id/idporten/oauth2callback` as the `redirect_uri`. If you have an organization certificate that's registered with Difi, you can [issue clients](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_api_admin.html) yourself.
 2. Edit and paste the following URL into your web browser: `https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?scope=profile+openid&response_type=code&redirect_uri=http://localhost:8080/id/idporten/oauth2callback&client_id=:client_id` (replace redirect_uri and client_id with your own values). Using _Bash_ you can do the following:
    * `export REDIRECT_URI=http://localhost:8080/id/idporten/oauth2callback` # Or your own value
    * `export CLIENT_ID=<value from Difi>`
